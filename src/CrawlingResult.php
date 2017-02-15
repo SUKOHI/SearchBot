@@ -67,18 +67,32 @@ class CrawlingResult {
 
                 if(in_array('*', $domains) || in_array($host, $domains)) {
 
-                    $exists = CrawlingQueue::where('type', $this->_type)
-                        ->where('url', $url)
-                        ->exists();
+                    $callback($url, $text);
 
-                    if(!$exists && is_callable($callback)) {
+                }
 
-                        $crawler_queue = new CrawlingQueue();
-                        $crawler_queue->type = $this->_type;
-                        $crawler_queue->url = $url;
-                        $callback($crawler_queue, $url, $text);
+            });
 
-                    }
+        }
+
+    }
+
+    public function queues($callback) {
+
+        if(is_callable($callback)) {
+
+            $this->links(function($url, $text) use($callback) {
+
+                $exists = CrawlingQueue::where('type', $this->_type)
+                    ->where('url', $url)
+                    ->exists();
+
+                if(!$exists) {
+
+                    $crawler_queue = new CrawlingQueue();
+                    $crawler_queue->type = $this->_type;
+                    $crawler_queue->url = $url;
+                    $callback($crawler_queue, $url, $text);
 
                 }
 

@@ -67,12 +67,16 @@ Now you have `config/search_bot.php` which you can set domains restrictions.
         // See http://api.symfony.com/2.3/Symfony/Component/DomCrawler/Crawler.html
         $crawler = $result->crawler();
 
-        $result->links(function($crawler_queue, $url, $text){
+        $result->links(function($url, $text){
 
             // All links including URL & text will come here.
-            // So you can add your own code here like if you should add queue or not.
-            // $crawler_queue has already type and url.
 
+        });
+
+        $result->queues(function($crawler_queue, $url, $text){
+
+            // All links that do not exist will come here.
+            // $crawler_queue has already type and url.
             $crawler_queue->save();
 
         });
