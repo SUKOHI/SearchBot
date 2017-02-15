@@ -12,6 +12,7 @@
         "fabpot/goutte": "dev-master",
         "sukohi/laravel-absolute-url": "1.*"
     },
+    "license": "MIT",
     "autoload": {
         "psr-4": {
             "Sukohi\\SearchBot\\": "src/"
