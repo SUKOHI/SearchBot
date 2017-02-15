@@ -45,12 +45,6 @@ class CrawlingResult {
 
     }
 
-    public function response() {
-
-        return $this->_response;
-
-    }
-
     public function links($callback) {
 
         if(is_callable($callback)) {
@@ -91,6 +85,18 @@ class CrawlingResult {
             });
 
         }
+
+    }
+
+    public function response() {
+
+        return $this->_response;
+
+    }
+
+    public function crawler() {
+
+        return $this->_crawler;
 
     }
 
