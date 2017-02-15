@@ -1,0 +1,21 @@
+{
+    "name": "sukohi/search-bot",
+    "description": "Laravel package to crawl websites.",
+    "authors": [
+        {
+            "name": "Sukohi",
+            "email": "capilano.sukohi@gmail.com"
+        }
+    ],
+    "require": {
+        "laravel/framework": "~5.0",
+        "fabpot/goutte": "dev-master",
+        "sukohi/laravel-absolute-url": "1.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Sukohi\\SearchBot\\": "src/"
+        }
+    },
+    "minimum-stability": "stable"
+}
