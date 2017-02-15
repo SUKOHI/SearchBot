@@ -3,7 +3,7 @@
 return [
 
     'domain' => [
-        'main' => ['*']
+        'main' => '*'
     ]
 
 ];
