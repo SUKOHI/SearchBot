@@ -75,7 +75,7 @@ Now you have `config/search_bot.php` which you can set domains restrictions.
 
         $result->queues(function($crawler_queue, $url, $text){
 
-            // All links that do not exist will come here.
+            // All links that do not exist in DB will come here.
             // $crawler_queue has already type and url.
             $crawler_queue->save();
 
