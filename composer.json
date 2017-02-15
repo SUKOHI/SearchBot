@@ -9,7 +9,7 @@
     ],
     "require": {
         "laravel/framework": "~5.0",
-        "fabpot/goutte": "dev-master",
+        "fabpot/goutte": "^3.2",
         "sukohi/laravel-absolute-url": "1.*"
     },
     "license": "MIT",
